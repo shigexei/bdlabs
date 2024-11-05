@@ -43,12 +43,11 @@ VALUES ('Aizifa', 'A', 'a_a', '877777777', 1000000, 1),
 
 
 --3
-EXPLAIN ANALYZE
+
 SELECT e.first_name, e.last_name, e.department_id, d.department_name
 FROM employees e JOIN departments d ON e.department_id = d.department_id;
 
 --4
-EXPLAIN ANALYZE
 SELECT e.first_name, e.last_name, e.department_id, d.department_name
 FROM employees e JOIN departments d ON e.department_id = d.department_id
 WHERE d.department_id in (80, 40);
@@ -57,7 +56,7 @@ CREATE INDEX department_id_index on departments(department_id);
 DROP INDEX department_id_index;
 
 --5
-EXPLAIN ANALYZE
+
 SELECT e.first_name, e.last_name, d.department_name, l.city, l.state_province
 FROM employees e
     JOIN departments d ON e.department_id = d.department_id
